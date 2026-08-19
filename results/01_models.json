@@ -1,0 +1,116 @@
+[
+  {
+    "model": "Logistic Regression",
+    "auc": 0.6324,
+    "gini": 0.2648,
+    "ap": 0.0637,
+    "base_rate": 0.0364,
+    "params": {
+      "model__C": 0.001,
+      "model__class_weight": "balanced"
+    },
+    "notes": "with calc"
+  },
+  {
+    "model": "Logistic Regression",
+    "auc": 0.6331,
+    "gini": 0.2663,
+    "ap": 0.064,
+    "base_rate": 0.0364,
+    "params": {
+      "model__C": 0.001,
+      "model__class_weight": "balanced"
+    },
+    "notes": "without calc"
+  },
+  {
+    "model": "Random Forest",
+    "auc": 0.6345,
+    "gini": 0.2689,
+    "ap": 0.0648,
+    "base_rate": 0.0364,
+    "params": {
+      "model__n_estimators": 400,
+      "model__min_samples_leaf": 100,
+      "model__max_features": 0.2,
+      "model__max_depth": 20,
+      "model__class_weight": null
+    },
+    "notes": "with calc"
+  },
+  {
+    "model": "Random Forest",
+    "auc": 0.6339,
+    "gini": 0.2677,
+    "ap": 0.0651,
+    "base_rate": 0.0364,
+    "params": {
+      "model__n_estimators": 400,
+      "model__min_samples_leaf": 100,
+      "model__max_features": 0.2,
+      "model__max_depth": 20,
+      "model__class_weight": null
+    },
+    "notes": "without calc"
+  },
+  {
+    "model": "XGBoost",
+    "auc": 0.6413,
+    "gini": 0.2825,
+    "ap": 0.0676,
+    "base_rate": 0.0364,
+    "params": {
+      "subsample": 1.0,
+      "reg_lambda": 1,
+      "reg_alpha": 5,
+      "n_estimators": 1600,
+      "min_child_weight": 100,
+      "max_depth": 5,
+      "learning_rate": 0.01,
+      "colsample_bytree": 0.6
+    },
+    "notes": "with calc"
+  },
+  {
+    "model": "XGBoost",
+    "auc": 0.6423,
+    "gini": 0.2846,
+    "ap": 0.0683,
+    "base_rate": 0.0364,
+    "params": {
+      "subsample": 1.0,
+      "reg_lambda": 1,
+      "reg_alpha": 5,
+      "n_estimators": 1600,
+      "min_child_weight": 100,
+      "max_depth": 5,
+      "learning_rate": 0.01,
+      "colsample_bytree": 0.6
+    },
+    "notes": "without calc"
+  },
+  {
+    "model": "Stacking",
+    "auc": 0.6403,
+    "gini": 0.2807,
+    "ap": 0.0677,
+    "base_rate": 0.0364,
+    "params": {
+      "base": "lr+rf+xgb",
+      "meta": "LogisticRegression"
+    },
+    "notes": "with calc"
+  },
+  {
+    "model": "Stacking",
+    "auc": 0.6409,
+    "gini": 0.2819,
+    "ap": 0.0682,
+    "base_rate": 0.0364,
+    "params": {
+      "base": "lr+rf+xgb",
+      "meta": "LogisticRegression"
+    },
+    "notes": "without calc"
+  }
+]
