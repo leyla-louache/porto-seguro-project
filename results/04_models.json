@@ -78,5 +78,83 @@
       "meta_model": "Logistic Regression"
     },
     "notes": "Stacking ensemble with Logistic Regression as meta-model; final evaluation on test data."
+  },
+  {
+    "model": "Logistic Regression",
+    "auc": 0.6278,
+    "gini": 0.2555,
+    "ap": 0.0606,
+    "base_rate": 0.0364,
+    "params": {
+      "max_iter": 1000,
+      "C": 1.0,
+      "random_state": 42
+    },
+    "notes": "without calc; same configuration as the with-calc version"
+  },
+  {
+    "model": "Linear SVM",
+    "auc": 0.6283,
+    "gini": 0.2565,
+    "ap": 0.06,
+    "base_rate": 0.0364,
+    "params": {
+      "C": 0.01,
+      "class_weight": null,
+      "max_iter": 5000,
+      "dual": "auto",
+      "random_state": 42
+    },
+    "notes": "without calc; same configuration as the with-calc version"
+  },
+  {
+    "model": "XGBoost",
+    "auc": 0.6411,
+    "gini": 0.2822,
+    "ap": 0.0675,
+    "base_rate": 0.0364,
+    "params": {
+      "n_estimators": 400,
+      "max_depth": 6,
+      "learning_rate": 0.03,
+      "subsample": 0.9,
+      "colsample_bytree": 1.0
+    },
+    "notes": "without calc; same configuration as the with-calc version"
+  },
+  {
+    "model": "Simple Average (50/50)",
+    "auc": 0.6395,
+    "gini": 0.2789,
+    "ap": 0.0639,
+    "base_rate": 0.0364,
+    "params": {
+      "weights": "50/50, rank-averaged"
+    },
+    "notes": "without calc; same configuration as the with-calc version"
+  },
+  {
+    "model": "Best Weighted Average",
+    "auc": 0.6417,
+    "gini": 0.2834,
+    "ap": 0.0656,
+    "base_rate": 0.0364,
+    "params": {
+      "weights": "XGB 0.85 / SVM 0.15, rank-averaged"
+    },
+    "notes": "without calc; same configuration as the with-calc version"
+  },
+  {
+    "model": "Stacking",
+    "auc": 0.6417,
+    "gini": 0.2834,
+    "ap": 0.0654,
+    "base_rate": 0.0364,
+    "params": {
+      "base": "XGBoost + SVM",
+      "meta": "LogisticRegression",
+      "cv": "3-fold OOF"
+    },
+    "notes": "without calc; same configuration as the with-calc version"
   }
 ]
